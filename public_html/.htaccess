@@ -1,0 +1,9 @@
+RewriteEngine On
+# RewriteBase is optional but useful if your project is in a subdirectory
+# RewriteBase /
+
+# Exclude certain file types from rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif)$ [NC]
+RewriteRule ^(.*)$ loader/index.php [QSA,L]

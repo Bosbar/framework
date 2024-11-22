@@ -1,0 +1,28 @@
+services:
+    php-apache:
+        image: oberd/php-8.0-apache
+        # image: . 
+        ports:
+            - "80:80"
+        volumes:
+            - ./public_html:/var/www/html
+        links:
+            - 'mariadb'
+        environment:
+            XDEBUG_MODE: "develop,debug,coverage"
+            XDEBUG_CONFIG: "client_host=host.docker.internal client_port=9000 start_with_request=yes idekey=VSCODE"
+            XDEBUG_SESSION: VSCODE
+
+    mariadb:
+        image: mariadb:10.4
+        volumes:
+            - ./bosbar_db.sql:/docker-entrypoint-initdb.d/bosbar_db.sql
+        ports:
+            - "3306:3306"
+        environment:
+            TZ: "Europe/Amsterdam"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "rootpwd"
+            MYSQL_USER: 'testuser'
+            MYSQL_PASSWORD: 'testpassword'
+            MYSQL_DATABASE: 'local'
