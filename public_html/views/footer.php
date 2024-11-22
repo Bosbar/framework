@@ -3,5 +3,7 @@
 
 <!-- Sticky footer -->
 <div class="sticky-footer">
-    Design by Proxiart & Guitarblaster
+    Design by Proxiart
 </div>
+</body>
+</html>

@@ -7,7 +7,7 @@ namespace Bosbar\Types;
  * @category   Types
  * @package    SG
  */
-class AuthorizationTypes
+class PermissionTypes
 {
 
 }

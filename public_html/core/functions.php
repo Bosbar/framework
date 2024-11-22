@@ -10,8 +10,8 @@ function getViewData($key) {
     return $_SESSION['viewData'][$key] ?? null;
 }
 
+// Function to render a view file with optional data
 /**
- * Function to render a view file with optional data
  * @param string variableFilename viewfile name.
  * @param string variableFolder   folder the viewfile is located.
  * @param string pageTitle        Title shown in the tab.
@@ -38,7 +38,8 @@ function renderView($variableFilename, $variableFolder, $pageTitle, $data = []) 
         // Handle case where view file doesn't exist
         echo "View file not found: $viewFilePath";
     }
-}
-// function setupRenderView() {
 
-// }
+function setupRenderViw() {
+
+}
+}
